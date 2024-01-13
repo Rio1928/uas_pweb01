@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Game List</title>
+</head>
+
+<body>
+    <header>
+        <!-- Your header content here -->
+    </header>
+
+    <div class="container">
+        <h1 class="heading">Game List</h1>
+
+        <!-- Display data in a table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Developer</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Database connection details
+                $dbHost = 'localhost';
+                $dbUser = 'root';
+                $dbPassword = '';
+                $dbName = 'gamedatabase';
+
+                // Create connection
+                $conn = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // Retrieve data from the database
+                $sql = "SELECT * FROM games";
+                $result = $conn->query($sql);
+
+                // Display data in a table
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["title"] . "</td>";
+                        echo "<td>" . $row["developer"] . "</td>";
+                        echo "<td><a href='#' class='btn'>Read More</a></td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='3'>No games found.</td></tr>";
+                }
+
+                $conn->close();
+                ?>
+            </tbody>
+        </table>
+
+        <div class="customCheckBoxHolder">
+            <input type="checkbox" id="cCB1" class="customCheckBoxInput">
+            <label for="cCB1" class="customCheckBoxWrapper">
+                <div class="customCheckBox">
+                    <div class="inner">VIEW ALL GAMES</div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 copyright and reserved</p>
+    </footer>
+</body>
+
+</html>

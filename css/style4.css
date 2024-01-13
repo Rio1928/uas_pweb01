@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+header{
+    background-image: repeating-radial-gradient(  #0c0a0a 80%,#2f312f 90%,#3f4549 90%);
+    background-size: 65px 65px;
+      color:violet;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: o;
+      z-index: 100;
+  }
+  
+
+  .searchBox {
+    display: flex;
+    max-width: 230px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+  }
+  
+  .searchButton {
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  }
+  /*hover effect*/
+  button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+  }
+  /*button pressing effect*/
+  button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+  }
+
+  .logo{
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+  .logo a{
+    color: blanchedalmond;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    align-items:baseline;
+}
+nav ul{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+}
+nav ul li{
+    margin-left: 25px;
+    list-style: none;
+}
+nav ul li a{
+    color: aqua;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    transition: 0.4s ease;
+}
+nav ul li a:hover{
+    color: blueviolet;
+}
+
+.container{
+    background:linear-gradient(45deg, blue, green) ;
+    padding:15px 9%;
+    padding-bottom: 100px;
+}
+
+.container .heading{
+    text-align: center;
+    padding-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(red, green, blue, alpha);
+    font-size: 40px;
+}
+
+.container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;;
+}
+
+.container .box-container .box{
+    box-shadow: 0 5px 10px rgba(0,0,0, .2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding:30px 20px;
+}
+
+.container .box-container .box img{
+    height: 80px;
+}
+
+.container .box-container .box h3{
+    color:#444;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+.container .box-container .box p{
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+button {
+    margin: 12px;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+    font-family: 'Damion', cursive;
+    border: none;
+    font-size: 16px;
+    color: rgb(161, 161, 161);
+    transition: 500ms;
+  }
+  
+  button:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+    color: #d6d6d6;
+    transition: 500ms;
+  }
+
+@media (max-width:786px){
+    .container{
+        padding: 20px;
+    }
+    
+}
+
+footer{
+    background-color: #262626;
+    color: #fff;
+    padding:20px;
+    text-align: center;
+}
